@@ -4,6 +4,7 @@ class User {
 
     String name
     ArrayList<Exercise> exercises
+    ArrayList<Routine> routines
 
     static constraints = {
     }
@@ -11,6 +12,7 @@ class User {
     User(String name){
         this.name = name
         this.exercises = new ArrayList<Exercise>()
+        this.routines = new ArrayList<Routine>()
     }
 
     void addExercise(Exercise exercise){
@@ -22,6 +24,8 @@ class User {
     }
 
     Routine createRoutine(Training training){
-       training.createRoutine(exercises)
+        Routine routine = training.createRoutine(exercises)
+        routines.add(routine)
+        routine
     }
 }

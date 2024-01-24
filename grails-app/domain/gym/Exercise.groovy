@@ -12,4 +12,6 @@ abstract class Exercise {
     }
 
     abstract void set(Set set)
+
+    abstract void modifyValues(Set set)
 }

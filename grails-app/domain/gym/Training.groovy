@@ -6,4 +6,6 @@ abstract class Training {
     }
 
     abstract Routine createRoutine(ArrayList<Exercise> exercises)
+
+    abstract Exercise addExercise(Exercise exercise)
 }

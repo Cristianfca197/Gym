@@ -46,5 +46,17 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             routine != null
     }
 
+    //void "You cannot create a Routine with a cardio Exercise"
 
+    /*void "The values of an Exercise within a training plan can be modified"() {
+        given: "A User with a Training plan"
+            User user = new User("Cris")
+            Exercise exercise = new Weight("Bench Press")
+            Training training = new Maintenance()
+            user.addExercise(exercise)
+            Routine routine = user.createRoutine(training)
+        when:"Want to modify the values of an Exercise"
+            user.modifyExercise()
+        then:"These values can be modified"
+    }*/
 }
