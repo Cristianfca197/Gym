@@ -2,21 +2,21 @@ package gym
 
 class Weight extends Exercise {
 
-    ArrayList<Set> sets
+    ArrayList<Series> sets
 
     static constraints = {
     }
 
     Weight(String name){
         super(name)
-        this.sets = new ArrayList<Set>()
+        this.sets = new ArrayList<Series>()
     }
 
-    void set(Set set){
+    void set(Series set){
         sets.add(set)
     }
 
-    void modifyValues(Set set){
+    void modifyValues(Series set){
         for(otherSet in sets){
             otherSet.copyValues(set)
         }

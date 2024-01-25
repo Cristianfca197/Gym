@@ -3,7 +3,7 @@ package gym
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class SetSpec extends Specification implements DomainUnitTest<Set> {
+class RepRangeSpec extends Specification implements DomainUnitTest<RepRange> {
 
     def setup() {
     }
@@ -13,6 +13,6 @@ class SetSpec extends Specification implements DomainUnitTest<Set> {
 
     void "test something"() {
         expect:"fix me"
-            true != false
+            true == false
     }
 }

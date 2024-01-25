@@ -11,7 +11,7 @@ abstract class Exercise {
         this.name = name
     }
 
-    abstract void set(Set set)
+    abstract void set(Series set)
 
-    abstract void modifyValues(Set set)
+    abstract void modifyValues(Series set)
 }

@@ -8,4 +8,10 @@ abstract class Training {
     abstract Routine createRoutine(ArrayList<Exercise> exercises)
 
     abstract Exercise addExercise(Exercise exercise)
+
+    abstract Exercise addExerciseIncreasedWeight(Exercise exercise)
+
+    abstract  WeightRange getWeightRange()
+
+    abstract  RepRange getRepRange()
 }
