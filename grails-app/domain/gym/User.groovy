@@ -3,16 +3,16 @@ package gym
 class User {
 
     String name
-    ArrayList<Exercise> exercises
-    ArrayList<Routine> routines
+    HashSet<Exercise> exercises
+    HashMap<String, Routine> Routines
 
     static constraints = {
     }
 
     User(String name){
         this.name = name
-        this.exercises = new ArrayList<Exercise>()
-        this.routines = new ArrayList<Routine>()
+        this.exercises = new HashSet<Exercise>()
+        this.routines = new HashMap<String, Routine>()
     }
 
     void addExercise(Exercise exercise){
@@ -25,7 +25,15 @@ class User {
 
     Routine createRoutine(Training training){
         Routine routine = training.createRoutine(exercises)
-        routines.add(routine)
+        routines.put(routine.getName(), routine)
         routine
+    }
+
+    void addSeriesExercise(Exercise exercise,Routine routine){
+        routines.get(routine.getName()).addSeriesExercise(exercise)
+    }
+
+    int numberExerciseSeries(Exercise exercise, Routine routine){
+        routines.get(routine.getName()).numberExerciseSeries(exercise)
     }
 }
