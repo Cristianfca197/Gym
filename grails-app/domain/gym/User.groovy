@@ -36,4 +36,13 @@ class User {
     int numberExerciseSeries(Exercise exercise, Routine routine){
         routines.get(routine.getName()).numberExerciseSeries(exercise)
     }
+
+    void changeSeriesExercise(int rep, int rest, int weight, Exercise exercise, Routine routine){
+        routines.get(routine.getName()).changeSeriesExercise(rep, rest, weight, exercise)
+    }
+
+    Series getSeriesExercise(Exercise exercise, Routine routine){
+        Series series = routines.get(routine.getName()).getSeriesExercise(exercise)
+        series
+    }
 }

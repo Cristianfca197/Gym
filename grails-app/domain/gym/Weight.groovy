@@ -12,13 +12,13 @@ class Weight extends Exercise {
         this.sets = new ArrayList<Series>()
     }
 
-    void setSerie(Series serie){
-        sets.add(serie)
+    void setSerie(int repetitions, int rest, int weight){
+        sets.add(new Series(repetitions, rest, weight))
     }
 
-    void modifyValues(Series set){
+    void modifyValues(int repetitions, int rest, int weight){
         for(otherSet in sets){
-            otherSet.copyValues(set)
+            otherSet.copyValues(repetitions, rest, weight)
         }
     }
 

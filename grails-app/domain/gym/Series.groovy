@@ -15,9 +15,13 @@ class Series {
         this.weight = weight
     }
 
-    void copyValues(Series set){
-        this.repetitions = set.repetitions
-        this.rest = set.rest
-        this.weight = set.weight
+    void copyValues(int repetitions, int rest, int weight){
+        this.repetitions = repetitions
+        this.rest = rest
+        this.weight = weight
+    }
+
+    boolean compareValues(Series serie){
+        this.repetitions == serie.repetitions && this.rest == serie.rest && this.weight == serie.weight
     }
 }

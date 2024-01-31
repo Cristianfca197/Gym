@@ -11,9 +11,9 @@ abstract class Exercise {
         this.name = name
     }
 
-    abstract void setSerie(Series serie)
+    abstract void setSerie(int repetitions, int rest, int weight)
 
-    abstract void modifyValues(Series set)
+    abstract void modifyValues(int repetitions, int rest, int weight)
 
     abstract Series getSerie()
 

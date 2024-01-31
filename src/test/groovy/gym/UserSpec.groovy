@@ -46,7 +46,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             routine != null
     }
 
-    void "Modify an Exercise from a Routine"(){
+    void "Adding a Series to an Exercise from a Routine"(){
         given:"A Maintenance Routine"
         User user = new User("Cris")
         Exercise exercise = new Weight("Bench Press")
@@ -57,6 +57,20 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
         user.addSeriesExercise(exercise, routine)
         then:"The Series is added correctly"
         user.numberExerciseSeries(exercise, routine) == 2
+    }
+
+    void "Change the values of the series of an Exercise from a Routine"(){
+        given:"A Maintenance Routine"
+            User user = new User("Cris")
+            Exercise exercise = new Weight("Bench Press")
+            Training training = new Maintenance()
+            user.addExercise(exercise)
+            Routine routine = user.createRoutine(training)
+        when:"I want to change the values of the series of an exercise"
+            user.changeSeriesExercise(10, 80, 60, exercise, routine)
+        then:"The Series is modified correctly"
+            Series serie = user.getSeriesExercise(exercise, routine)
+            serie.compareValues(new Series(10, 80, 60))
     }
 
     //void "You cannot create a Routine with a cardio Exercise"

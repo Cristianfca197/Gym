@@ -6,7 +6,7 @@ class Maintenance extends Training{
     }
 
     void addSeriesExercise(Exercise exercise){
-        exercise.setSerie(new Series(8, 90, 50))
+        exercise.setSerie(8, 90, 50)
     }
 
     Exercise addExercise(Exercise exercise){
@@ -17,7 +17,7 @@ class Maintenance extends Training{
     Routine createRoutine(HashSet<Exercise> exercises){
         Routine routine = new Routine("Maintenance", this)
         for(exercise in exercises){
-            routine.addExercise(this.addExercise(exercise))
+            routine.addExercise(exercise)
         }
         routine
     }

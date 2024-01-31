@@ -44,4 +44,13 @@ class Routine {
     int numberExerciseSeries(Exercise exercise){
         exercises.get(exercise.getName()).numberSeries()
     }
+
+    void changeSeriesExercise(int rep, int rest, int weight, Exercise exercise){
+        exercises.get(exercise.getName()).modifyValues(rep, rest, weight)
+    }
+
+    Series getSeriesExercise(Exercise exercise){
+        Series series = exercises.get(exercise.getName()).getSerie()
+        series
+    }
 }

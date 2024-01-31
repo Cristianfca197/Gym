@@ -11,4 +11,6 @@ abstract class Training {
 
     abstract Exercise addExerciseIncreasedWeight(Exercise exercise)
 
+    abstract void addSeriesExercise(Exercise exercise)
+
 }
