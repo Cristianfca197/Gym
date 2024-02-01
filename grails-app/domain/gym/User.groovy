@@ -4,7 +4,7 @@ class User {
 
     String name
     HashSet<Exercise> exercises
-    HashMap<String, Routine> Routines
+    HashMap<String, Routine> routines
 
     static constraints = {
     }
@@ -44,5 +44,14 @@ class User {
     Series getSeriesExercise(Exercise exercise, Routine routine){
         Series series = routines.get(routine.getName()).getSeriesExercise(exercise)
         series
+    }
+
+    void deleteSeriesExercise(Exercise exercise, Routine routine){
+        routines.get(routine.getName()).deleteSeriesExercise(exercise)
+    }
+
+    Program createProgram(Routine routine, Program program){
+        Program  otherProgram = program.getProgramWith(routines.get(routine.getName()))
+        otherProgram
     }
 }

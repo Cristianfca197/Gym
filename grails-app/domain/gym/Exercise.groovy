@@ -18,4 +18,8 @@ abstract class Exercise {
     abstract Series getSerie()
 
     abstract int numberSeries()
+
+    abstract  void deleteSerie()
+
+    abstract boolean weightLess(int weight)
 }

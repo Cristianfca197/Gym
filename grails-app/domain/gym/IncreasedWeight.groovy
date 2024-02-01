@@ -12,4 +12,15 @@ class IncreasedWeight extends Program{
         this.firstWeek = routine
         this.secondWeek = routine.increasedWeight()
     }
+
+    Program getProgramWith(Routine routine) {
+        if(routine.allowsWeightProgression()){
+            this.firstWeek = routine
+            this.secondWeek = routine.increasedWeight()
+            this
+        }else{
+            //error
+            null
+        }
+    }
 }

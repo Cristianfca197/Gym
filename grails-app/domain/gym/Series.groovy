@@ -24,4 +24,8 @@ class Series {
     boolean compareValues(Series serie){
         this.repetitions == serie.repetitions && this.rest == serie.rest && this.weight == serie.weight
     }
+
+    boolean weightLess(int weight){
+        this.weight < weight
+    }
 }

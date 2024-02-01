@@ -19,8 +19,8 @@ class Routine {
         this.name = routine.name
         this.training = routine.training
         this.exercises = new HashMap<String, Exercise>()
-        for(Exercise exercise in routine.exercises){
-            exercises.add(exercise.getName(), training.addExerciseIncreasedWeight(exercise))
+        for(Exercise e : routine.exercises.values()){
+            exercises.put(e.getName(), training.addExerciseIncreasedWeight(e))
         }
     }
 
@@ -46,11 +46,30 @@ class Routine {
     }
 
     void changeSeriesExercise(int rep, int rest, int weight, Exercise exercise){
-        exercises.get(exercise.getName()).modifyValues(rep, rest, weight)
+        //exercises.get(exercise.getName()).modifyValues(rep, rest, weight)
+        training.changeSeriesExercise(rep, rest, weight, exercise)
     }
 
     Series getSeriesExercise(Exercise exercise){
         Series series = exercises.get(exercise.getName()).getSerie()
         series
+    }
+
+    void deleteSeriesExercise(Exercise exercise){
+        training.deleteSeriesExercise(exercise)
+    }
+
+    boolean allowsWeightProgression(){
+        training.allowsWeightProgression(this)
+    }
+
+    boolean compareWeights(int weight){
+        boolean check = true
+        for(String key : exercises.keySet()){
+            if(!exercises.get(key).weightLess(weight)){
+                check = false
+            }
+        }
+        check
     }
 }

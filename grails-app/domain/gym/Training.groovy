@@ -13,4 +13,11 @@ abstract class Training {
 
     abstract void addSeriesExercise(Exercise exercise)
 
+    abstract  boolean  validValues(int rep, int rest, int weight)
+
+    abstract void changeSeriesExercise(int rep, int rest, int weight, Exercise exercise)
+
+    abstract  void deleteSeriesExercise(Exercise exercise)
+
+    abstract boolean allowsWeightProgression(Routine routine)
 }

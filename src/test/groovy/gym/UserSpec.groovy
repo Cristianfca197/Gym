@@ -59,6 +59,20 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
         user.numberExerciseSeries(exercise, routine) == 2
     }
 
+    void "Eliminating a Series to an Exercise from a Routine is possible"(){
+        given:"A Maintenance Routine and a Weight Exercise with two Series"
+            User user = new User("Cris")
+            Exercise exercise = new Weight("Bench Press")
+            Training training = new Maintenance()
+            user.addExercise(exercise)
+            Routine routine = user.createRoutine(training)
+            user.addSeriesExercise(exercise, routine)
+        when:"I want to delete a Series to an Exercise"
+            user.deleteSeriesExercise(exercise, routine)
+        then:"The Series is deleted correctly"
+            user.numberExerciseSeries(exercise, routine) == 1
+    }
+
     void "Change the values of the series of an Exercise from a Routine"(){
         given:"A Maintenance Routine"
             User user = new User("Cris")
@@ -71,6 +85,20 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
         then:"The Series is modified correctly"
             Series serie = user.getSeriesExercise(exercise, routine)
             serie.compareValues(new Series(10, 80, 60))
+    }
+
+    void "Create the Program based on a routine"(){
+        given:"There is a Routine"
+            User user = new User("Cris")
+            Exercise exercise = new Weight("Bench Press")
+            Training training = new Maintenance()
+            user.addExercise(exercise)
+            Routine routine = user.createRoutine(training)
+        when:"I want to get my training Program"
+            IncreasedWeight increasedWeight = new IncreasedWeight()
+            Program program = user.createProgram(routine, increasedWeight)
+        then:"The training Program is created correctly"
+            program != null
     }
 
     //void "You cannot create a Routine with a cardio Exercise"

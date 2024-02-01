@@ -29,4 +29,18 @@ class Weight extends Exercise {
     int numberSeries(){
         sets.size()
     }
+
+    void deleteSerie(){
+        sets.removeLast()
+    }
+
+    boolean weightLess(int weight){
+        boolean check = false
+        for(Series s : sets){
+            if(s.weightLess(weight)){
+                check = true
+            }
+        }
+        check
+    }
 }
