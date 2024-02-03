@@ -20,4 +20,6 @@ abstract class Training {
     abstract  void deleteSeriesExercise(Exercise exercise)
 
     abstract boolean allowsWeightProgression(Routine routine)
+
+    abstract boolean allowsDropSet(Exercise exercise)
 }

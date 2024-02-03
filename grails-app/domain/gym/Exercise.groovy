@@ -22,4 +22,10 @@ abstract class Exercise {
     abstract  void deleteSerie()
 
     abstract boolean weightLess(int weight)
+
+    abstract int getWeight()
+
+    abstract void modifySerie(int serie, int rep, int rest, int weight)
+
+    abstract int numberRepetitions()
 }

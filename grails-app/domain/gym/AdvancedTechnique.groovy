@@ -5,5 +5,5 @@ abstract class AdvancedTechnique {
     static constraints = {
     }
 
-    abstract Exercise getExercise()
+    abstract void setValues(Exercise exercise, Training training)
 }

@@ -54,4 +54,8 @@ class User {
         Program  otherProgram = program.getProgramWith(routines.get(routine.getName()))
         otherProgram
     }
+
+    void createAdvancedTechnique(Exercise exercise, AdvancedTechnique advancedTechnique, Routine routine){
+        routines.get(routine.getName()).createAdvancedTechnique(exercise, advancedTechnique)
+    }
 }

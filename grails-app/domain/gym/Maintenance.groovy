@@ -58,4 +58,8 @@ class Maintenance extends Training{
         }
         check
     }
+
+    boolean allowsDropSet(Exercise exercise){
+       exercise.getWeight() >= 60 && exercise.numberSeries() == 3
+    }
 }

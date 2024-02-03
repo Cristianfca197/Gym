@@ -72,4 +72,8 @@ class Routine {
         }
         check
     }
+
+    void createAdvancedTechnique(Exercise exercise, AdvancedTechnique advancedTechnique){
+        advancedTechnique.setValues(exercises.get(exercise.getName()), training)
+    }
 }

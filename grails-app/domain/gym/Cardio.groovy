@@ -34,4 +34,19 @@ class Cardio extends Exercise{
     boolean weightLess(int weight) {
         return false
     }
+
+    @Override
+    int getWeight() {
+        return 0
+    }
+
+    @Override
+    void modifySerie(int serie, int rep, int rest, int weight) {
+
+    }
+
+    @Override
+    int numberRepetitions() {
+        return 0
+    }
 }

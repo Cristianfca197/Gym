@@ -43,4 +43,16 @@ class Weight extends Exercise {
         }
         check
     }
+
+    int getWeight(){
+        this.getSerie().getWeight()
+    }
+
+    void modifySerie(int serie, int rep, int rest, int weight){
+        sets.get(serie).copyValues(rep, rest, weight)
+    }
+
+    int numberRepetitions(){
+        this.getSerie().getRepetitions()
+    }
 }

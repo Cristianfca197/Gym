@@ -101,6 +101,22 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             program != null
     }
 
+    void "Create an Exercise Routine with Advanced Technique"(){
+        given:"There is a Routine and an Exercise that allows DropSet"
+            User user = new User("Cris")
+            Exercise exercise = new Weight("Bench Press")
+            Training training = new Maintenance()
+            user.addExercise(exercise)
+            Routine routine = user.createRoutine(training)
+            user.addSeriesExercise(exercise, routine)
+            user.addSeriesExercise(exercise, routine)
+            user.changeSeriesExercise(12, 60, 70, exercise, routine)
+        when:"I want to obtain the Routine of an Exercise with Advanced Technique"
+            DropSet dropSet = new DropSet()
+            user.createAdvancedTechnique(exercise, dropSet, routine)
+        then:"The values of the Advances Technique are set correctly"
+    }
+
     //void "You cannot create a Routine with a cardio Exercise"
 
     /*void "The values of an Exercise within a training plan can be modified"() {
