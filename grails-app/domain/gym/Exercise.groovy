@@ -28,4 +28,8 @@ abstract class Exercise {
     abstract void modifySerie(int serie, int rep, int rest, int weight)
 
     abstract int numberRepetitions()
+
+    abstract boolean hasAdvancedTechnique()
+
+    abstract void withAdvancedTechnique(AdvancedTechnique advancedTechnique)
 }

@@ -49,4 +49,14 @@ class Cardio extends Exercise{
     int numberRepetitions() {
         return 0
     }
+
+    @Override
+    boolean hasAdvancedTechnique() {
+        return false
+    }
+
+    @Override
+    void withAdvancedTechnique(AdvancedTechnique advancedTechnique) {
+
+    }
 }

@@ -58,4 +58,8 @@ class User {
     void createAdvancedTechnique(Exercise exercise, AdvancedTechnique advancedTechnique, Routine routine){
         routines.get(routine.getName()).createAdvancedTechnique(exercise, advancedTechnique)
     }
+
+    boolean exerciseWithAdvancedTechnique(Exercise exercise, Routine routine){
+        routines.get(routine.getName()).exerciseWithAdvancedTechnique(exercise)
+    }
 }

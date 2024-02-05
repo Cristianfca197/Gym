@@ -115,6 +115,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             DropSet dropSet = new DropSet()
             user.createAdvancedTechnique(exercise, dropSet, routine)
         then:"The values of the Advances Technique are set correctly"
+            assert user.exerciseWithAdvancedTechnique(exercise, routine)
     }
 
     //void "You cannot create a Routine with a cardio Exercise"

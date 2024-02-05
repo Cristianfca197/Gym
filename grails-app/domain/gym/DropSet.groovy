@@ -12,6 +12,7 @@ class DropSet extends AdvancedTechnique{
             for(int i = 1; i < 3; i++){
                 exercise.modifySerie(i, exercise.numberRepetitions(), 0, maxWeight - (5*i))
             }
+            exercise.withAdvancedTechnique(this)
         }
     }
 }
