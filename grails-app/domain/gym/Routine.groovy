@@ -51,7 +51,7 @@ class Routine {
     }
 
     Series getSeriesExercise(Exercise exercise){
-        Series series = exercises.get(exercise.getName()).getSerie()
+        Series series = exercises.get(exercise.getName()).getFirstSeries()
         series
     }
 

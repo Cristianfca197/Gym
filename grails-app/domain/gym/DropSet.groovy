@@ -10,7 +10,7 @@ class DropSet extends AdvancedTechnique{
         if(training.allowsDropSet(exercise)){
             int maxWeight = exercise.getWeight()
             for(int i = 1; i < 3; i++){
-                exercise.modifySerie(i, exercise.numberRepetitions(), 0, maxWeight - (5*i))
+                exercise.modifySeries(i, exercise.numberRepetitions(), 0, maxWeight - (5*i))
             }
             exercise.withAdvancedTechnique(this)
         }

@@ -6,7 +6,7 @@ class Cardio extends Exercise{
     }
 
     @Override
-    void setSerie(int repetitions, int rest, int weight) {
+    void setSeries(int repetitions, int rest, int weight) {
 
     }
 
@@ -16,7 +16,7 @@ class Cardio extends Exercise{
     }
 
     @Override
-    Series getSerie() {
+    Series getFirstSeries() {
         return null
     }
 
@@ -26,7 +26,7 @@ class Cardio extends Exercise{
     }
 
     @Override
-    void deleteSerie() {
+    void deleteSeries() {
 
     }
 
@@ -41,7 +41,7 @@ class Cardio extends Exercise{
     }
 
     @Override
-    void modifySerie(int serie, int rep, int rest, int weight) {
+    void modifySeries(int serie, int rep, int rest, int weight) {
 
     }
 

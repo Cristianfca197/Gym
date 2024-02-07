@@ -7,7 +7,7 @@ class Maintenance extends Training{
 
     void addSeriesExercise(Exercise exercise){
         if(exercise.numberSeries() < 3){
-            exercise.setSerie(8, 90, 50)
+            exercise.setSeries(8, 90, 50)
         }else{
             //error
         }
@@ -45,7 +45,7 @@ class Maintenance extends Training{
 
     void deleteSeriesExercise(Exercise exercise){
         if(exercise.numberSeries() > 1){
-            exercise.deleteSerie()
+            exercise.deleteSeries()
         }else{
             //error
         }

@@ -5,27 +5,29 @@ abstract class Exercise {
     String name
 
     static constraints = {
+        name nullable: false, blank: false
     }
 
     Exercise(String name){
+        assert (!name || !name.trim().isEmpty())
         this.name = name
     }
 
-    abstract void setSerie(int repetitions, int rest, int weight)
+    abstract void setSeries(int repetitions, int rest, int weight)
 
     abstract void modifyValues(int repetitions, int rest, int weight)
 
-    abstract Series getSerie()
+    abstract Series getFirstSeries()
 
     abstract int numberSeries()
 
-    abstract  void deleteSerie()
+    abstract  void deleteSeries()
 
     abstract boolean weightLess(int weight)
 
     abstract int getWeight()
 
-    abstract void modifySerie(int serie, int rep, int rest, int weight)
+    abstract void modifySeries(int serie, int rep, int rest, int weight)
 
     abstract int numberRepetitions()
 

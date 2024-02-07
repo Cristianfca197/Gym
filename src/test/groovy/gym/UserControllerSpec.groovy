@@ -1,9 +1,9 @@
 package gym
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class WeightRangeSpec extends Specification implements DomainUnitTest<WeightRange> {
+class UserControllerSpec extends Specification implements ControllerUnitTest<UserController> {
 
     def setup() {
     }

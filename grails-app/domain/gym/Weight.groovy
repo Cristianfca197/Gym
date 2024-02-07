@@ -6,6 +6,7 @@ class Weight extends Exercise {
     AdvancedTechnique advancedTechnique
 
     static constraints = {
+        name nullable: false, blank: false
     }
 
     Weight(String name){
@@ -14,7 +15,7 @@ class Weight extends Exercise {
         this.advancedTechnique = null
     }
 
-    void setSerie(int repetitions, int rest, int weight){
+    void setSeries(int repetitions, int rest, int weight){
         sets.add(new Series(repetitions, rest, weight))
     }
 
@@ -24,7 +25,7 @@ class Weight extends Exercise {
         }
     }
 
-    Series getSerie(){
+    Series getFirstSeries(){
        sets.get(0)
     }
 
@@ -32,7 +33,7 @@ class Weight extends Exercise {
         sets.size()
     }
 
-    void deleteSerie(){
+    void deleteSeries(){
         sets.removeLast()
     }
 
@@ -47,15 +48,15 @@ class Weight extends Exercise {
     }
 
     int getWeight(){
-        this.getSerie().getWeight()
+        this.getFirstSeries().getWeight()
     }
 
-    void modifySerie(int serie, int rep, int rest, int weight){
-        sets.get(serie).copyValues(new Series(rep, rest, weight))
+    void modifySeries(int series, int rep, int rest, int weight){
+        sets.get(series).copyValues(new Series(rep, rest, weight))
     }
 
     int numberRepetitions(){
-        this.getSerie().getRepetitions()
+        this.getFirstSeries().getRepetitions()
     }
 
     boolean hasAdvancedTechnique(){
