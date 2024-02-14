@@ -2,7 +2,7 @@ package gym
 
 class UserController {
 
-    static scaffold = User
+    //static scaffold = User
 
     def index() {
         //render "Prueba de render"
