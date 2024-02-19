@@ -1,0 +1,4 @@
+2024-02-19 16:56:38 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USER" no encontrada
+Table "USER" not found; SQL statement:
+insert into user (id, version, name) values (null, ?, ?) [42102-199]

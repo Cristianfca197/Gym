@@ -7,6 +7,7 @@ class Weight extends Exercise {
 
     static constraints = {
         name nullable: false, blank: false
+        advancedTechnique nullable: true
     }
 
     Weight(String name){
