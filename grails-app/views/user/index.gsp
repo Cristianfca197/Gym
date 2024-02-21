@@ -1,14 +1,8 @@
 <html>
 <head>
-    <title>titulo de la pagina</title>
+    <title>Index</title>
 </head>
 <body>
-
-<g:form action="createUser">
-
-    nombre: <input type="text" name="name" /> <br/>
-    <button type="submit">Cargar</button>
-</g:form>
-
+<h1>Bienvenido, ${user.name}</h1>
 </body>
 </html>

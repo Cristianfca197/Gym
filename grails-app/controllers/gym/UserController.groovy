@@ -4,7 +4,13 @@ class UserController {
 
     //static scaffold = User
 
-    def index() {
+    def index(Long id) {
+        User user = User.get(id)
+        if(user){
+            [user: user]
+        }else{
+            render("Error")
+        }
         //render "Prueba de render"
         //redirect(action: createUser())
     }
