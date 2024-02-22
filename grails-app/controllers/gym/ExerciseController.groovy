@@ -16,4 +16,15 @@ class ExerciseController {
     def createCardio(){
 
     }
+
+    def addExercise(){
+        def exerWeight = Weight.list()
+        def exerCardio = Cardio.list()
+        def user = User.get(params.id)
+        [
+                user: user,
+                exerWeight: exerWeight,
+                exerCardio: exerCardio
+        ]
+    }
 }
