@@ -2,6 +2,9 @@ package gym
 
 class UserController {
 
+    def userService
+    def exerciseUserService
+
     //static scaffold = User
 
     def index(Long id) {
@@ -29,21 +32,19 @@ class UserController {
 
     def exerciseList(){
         User user = User.get(params.id)
+        List exercisesUser = ExerciseUser.findAllByUser(user)
         [
                 user: user,
-                exercises: user.getExercises()
+                exercises: exercisesUser
         ]
     }
 
     def addSelectedExercises(){
         def selectedExercisesId = params.list('selectedExercises')
-        User user = User.get(params.id)
         for(id in selectedExercisesId){
-            Exercise exercise = Exercise.get(id as Long)
-            user.addExercise(exercise)
-            user.save()
+            ExerciseUser exerciseUser = userService.addExercise(params.id as long, id as long)
         }
-        redirect(controller: "User", action: "index", id: user.id)
+        redirect(controller: "User", action: "index", id: params.id)
     }
 
     def routineList(){
