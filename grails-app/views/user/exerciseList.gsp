@@ -3,16 +3,16 @@
     <title>exercise list</title>
 </head>
 <body>
-    <h1>Bienvenido, ${user.name}</h1>
-    <h1>lista, ${exercises}</h1>
+    <h1>Bienvenido, ${user.getName()}</h1>
+    <h1>listas: ${exerciseLists}</h1>
     <table class="table">
-        Mis ejercicios:
-        <g:each in="${exercises}" var="exercise">
-            <h4>${exercise.exerciseName()}</h4>
+        Mis listas:
+        <g:each in="${exerciseLists}" var="lists">
+            <h4>${lists.getName()}</h4>
         </g:each>
         lpmqmp
     </table>
 
-    <a href="${createLink(controller: 'exercise', action: 'addExercise', params: [id: user.id])}">Agregar ejercicios</a>
+    <a href="${createLink(controller: 'user', action: 'createList', params: [id: user.getId()])}">Crear lista</a>
 </body>
 </html>

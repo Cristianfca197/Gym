@@ -3,12 +3,10 @@ package gym
 class User {
 
     String name
-    HashSet<ExerciseUser> exercisesUser = new HashSet<ExerciseUser>()
-    HashMap<String, Routine> routines
+    //HashSet<ExerciseUser> exercisesUser = new HashSet<ExerciseUser>()
+    //HashMap<String, Routine> routines
 
-    static hasMany = [
-            exercisesUser: ExerciseUser,
-    ]
+    static hasMany = [exercisesLists: ExerciseList]
 
     static constraints = {
     }
@@ -16,7 +14,7 @@ class User {
     User(String name){
         this.name = name
         //this.exercises = new HashSet<Exercise>()
-        this.routines = new HashMap<String, Routine>()
+        //this.routines = new HashMap<String, Routine>()
     }
 
     ExerciseUser addExercise(Exercise exercise){

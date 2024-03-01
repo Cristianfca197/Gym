@@ -4,6 +4,10 @@ abstract class Exercise {
 
     String name
 
+    //static belongsTo = [user: User, exerciseList: ExerciseList, exercisesUsers: ExerciseUser]
+
+    static hasMany = [series: Series]
+
     static constraints = {
         name nullable: false, blank: false
     }

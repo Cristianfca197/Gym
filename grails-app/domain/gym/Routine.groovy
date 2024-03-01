@@ -4,15 +4,18 @@ class Routine {
 
     String name
     Training training
-    HashMap<String, Exercise> exercises
+    ExerciseList exerciseList
+    //HashMap<String, Exercise> exercises
+
+    static belongsTo = [user: User]
 
     static constraints = {
     }
 
-    Routine(String name, Training training){
+    Routine(String name, Training training, ExerciseList){
         this.name = name
         this.training = training
-        this.exercises = new HashMap<String, Exercise>()
+        this.exerciseList = ExerciseList
     }
 
     Routine(Routine routine){

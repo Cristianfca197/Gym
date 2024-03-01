@@ -6,23 +6,37 @@ class UserController {
     def exerciseUserService
 
     //static scaffold = User
+    static allowedMethods = [
+            'index': 'GET',
+            'createUser': 'POST'
+    ]
+    def index(){}
 
-    def index(Long id) {
-        User user = User.get(id)
+    def main() {
+        User user = User.get(params.id)
+        List exercisesList = ExerciseList.findAllByUser(user)
+        List exercises = Exercise.findAll()
         if(user){
-            [user: user]
+            [
+                    user: user,
+                    exerciseLists: exercisesList,
+                    exercises: exercises
+            ]
         }else{
-            render("Error")
+            redirect(action: createUser())
+            //render("Error")
         }
         //render "Prueba de render"
         //redirect(action: createUser())
     }
 
+    def createUserView(){}
+
     def createUser(){
         User user = new User(
             name: params.name
         ).save(failOnError: true)
-        render "Registrandome ${user}"
+        redirect(action: index())
     }
 
     def listUser() {
@@ -32,10 +46,29 @@ class UserController {
 
     def exerciseList(){
         User user = User.get(params.id)
-        List exercisesUser = ExerciseUser.findAllByUser(user)
+        List exercisesList = ExerciseList.findAllByUser(user)
         [
                 user: user,
-                exercises: exercisesUser
+                exerciseLists: exercisesList
+        ]
+    }
+
+    def createList(){
+        def selectedExercisesId = params.list('selectedExercises')
+        for(id in selectedExercisesId){
+            ExerciseUser exerciseUser = userService.addExercise(params.id as long, id as long)
+        }
+        redirect(controller: "User", action: "main", id: params.id)
+    }
+
+    def addExercise(){
+        def exerWeight = Weight.list()
+        def exerCardio = Cardio.list()
+        def user = User.get(params.id)
+        [
+                user: user,
+                exerWeight: exerWeight,
+                exerCardio: exerCardio
         ]
     }
 
