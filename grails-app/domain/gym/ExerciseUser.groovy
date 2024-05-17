@@ -2,8 +2,9 @@ package gym
 
 class ExerciseUser {
 
-    //User user
+    User user
     Exercise exercise
+    ExerciseList exerciseList
     //Series series
 
     static belongsTo = [user: User, exerciseList: ExerciseList]
@@ -13,9 +14,10 @@ class ExerciseUser {
     static constraints = {
     }
 
-    ExerciseUser(Exercise exercise, User user){
-        //this.user = user
-        //this.exercise = exercise
+    ExerciseUser(Exercise exercise, ExerciseList exerciseList, User user){
+        this.user = user
+        this.exercise = exercise
+        this.exerciseList = exerciseList
     }
 
     String exerciseName(){

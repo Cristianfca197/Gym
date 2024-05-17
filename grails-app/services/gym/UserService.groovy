@@ -9,11 +9,18 @@ class UserService {
         User.findByName(name)
     }
 
-    ExerciseUser addExercise(long userId, long exerciseId){
+    ExerciseList createExerciseList(long userId, String nameList){
         User user = User.findById(userId)
-        Exercise exercise = Exercise.findById(exerciseId)
+        ExerciseList exerciseList = user.createExerciseList(nameList)
+        exerciseList.save(failOnError: true)
+    }
 
-        ExerciseUser exerciseUser = user.addExercise(exercise)
-        exerciseUser.save(failOnError: true)
+    void addExercisesInList(long listUserId, List selectedExercisesId){
+        ExerciseList exerciseList = ExerciseList.findById(listUserId)
+        for(id in selectedExercisesId){
+            Exercise exercise = Exercise.findById(id as long)
+            ExerciseUser exerciseUser = exerciseList.addExercise(exercise)
+            exerciseUser.save(failOnError: true)
+        }
     }
 }

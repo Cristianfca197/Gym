@@ -26,6 +26,7 @@
         <a href="javascript:void(0);" onclick="toggleSection('createList')">Mostrar/Ocultar Ejercicios</a>
         <div id="createList" style="display: none;">
             <g:form action="createList">
+                <g:hiddenField name="userId" value="${user.id}"/>
                 Nombre:<input type="text" id="name" name="name" /><br/>
 
                 Selecciona los ejercicios:

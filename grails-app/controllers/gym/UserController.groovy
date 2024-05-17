@@ -55,10 +55,10 @@ class UserController {
 
     def createList(){
         def selectedExercisesId = params.list('selectedExercises')
-        for(id in selectedExercisesId){
-            ExerciseUser exerciseUser = userService.addExercise(params.id as long, id as long)
-        }
-        redirect(controller: "User", action: "main", id: params.id)
+        ExerciseList exerciseList = userService.createExerciseList(params.userId as long, params.name)
+        userService.addExercisesInList(exerciseList.id, selectedExercisesId)
+
+        redirect(controller: "User", action: "index", id: params.userId)
     }
 
     def addExercise(){

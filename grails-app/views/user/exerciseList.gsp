@@ -12,7 +12,7 @@
         </g:each>
         lpmqmp
     </table>
-
-    <a href="${createLink(controller: 'user', action: 'createList', params: [id: user.getId()])}">Crear lista</a>
+    <h1>User Id: ${user.getId()}</h1>
+    <a href="${createLink(controller: 'user', action: 'createList', params: [id: user.id])}">Crear lista</a>
 </body>
 </html>

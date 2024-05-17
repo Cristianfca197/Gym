@@ -17,9 +17,14 @@ class User {
         //this.routines = new HashMap<String, Routine>()
     }
 
+    ExerciseList createExerciseList(String name){
+        ExerciseList exerciseList = new ExerciseList(name, this)
+        exerciseList
+    }
+
     ExerciseUser addExercise(Exercise exercise){
         ExerciseUser exerciseUser = new ExerciseUser(exercise, this)
-        exercisesUser.add(exerciseUser)
+        exercisesLists.add(exerciseUser)
         exerciseUser
     }
 
